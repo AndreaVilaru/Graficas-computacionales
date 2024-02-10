@@ -1,0 +1,62 @@
+<!doctype html>
+<html>
+ <head>
+   <meta charset="utf-8">
+   <title>Página 2</title>
+   <style>
+    body {
+        background-color:white;
+        text-align: center;
+    }
+    h1{
+        color: black;
+    }
+    h2 {
+        color: maroon;
+        font-variant: small-caps;
+    }
+    p {
+        color:gray;
+        font-size: 40px;
+    }
+    </style>
+
+    <script>
+        function init(){
+        var nombreactor = document.getElementById("bestactor");
+        nombreactor.innerHTML = "Cillian Murphy";
+
+        var nombreactor = document.getElementById("bestdrama");
+        nombreactor.innerHTML = "Oppenheimer";
+
+        var nombreactor = document.getElementById("bestcomedy");
+        nombreactor.innerHTML = "Poor Things";
+
+        var nombreactor = document.getElementById("bestactress");
+        nombreactor.innerHTML = "Lily Gladstone";
+        }
+        window.onload = init;
+  </script>
+
+ </head>
+ <body>
+     <h1>Golden Globes Winners 2023</h1>
+ </br>
+     <h2>Best Motion Picture - Drama</h2>
+     <p id="bestdrama">Name Drama</p>
+     <img src="Oppenheimer.jpg" width="400px">
+ </br>
+     <h2>Best Motion Picture - Musical or Comedy</h2>
+     <p id="bestcomedy">Name Comedy</p>
+     <img src="Poor things.jpg" width="400px">
+ </br>
+     <h2>Best performance by an actress in a motion picture - drama</h2>
+     <p id="bestactress">Name Actress</p>
+     <img src="Lily Gladstone.webp" width="400px">
+ </br>
+     <h2>Best performance by an actor in a motion picture - drama</h2>
+     <p id="bestactor">Name Actor</p>
+     <img src="Cillian.jpg" width="400px">
+ </body>
+</html>
+
