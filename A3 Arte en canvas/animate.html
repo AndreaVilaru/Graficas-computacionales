@@ -1,0 +1,222 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Pagina 4</title>
+  <style>
+    body{
+        background-color: black;
+        text-align: center;
+    }
+      canvas{
+          border: 2px solid purple;
+          background-color: white;
+      }
+  </style>
+
+<script>
+
+    var x = 10;
+    var dx = 4;
+
+    var x2 = 10;
+    var dx2 = 4.01;
+
+    var x3 = 10;
+    var dx3 = 4.03;
+
+    var x4 = 10;
+    var dx4 = 4.06;
+
+    var x5 = 10;
+    var dx5 = 4.1;
+
+    var x6 = 10;
+    var dx6 = 4.16;
+
+    var x7 = 10;
+    var dx7 = 4.22;
+
+    function animate(){
+        requestAnimationFrame(animate);
+        console.log('animando');
+        var canvas = document.getElementById("micanvas");
+        var context = canvas.getContext("2d");
+        context.clearRect(0,0,innerWidth, innerHeight);
+        
+        context.fillStyle="lightblue";
+        context.fillRect(x,10,30,10);
+        context.fillRect(x+60,10,30,10);
+
+        context.fillRect(x-10,20,50,10);
+        context.fillRect(x+50,20,50,10);
+
+        context.fillRect(x-10,30,110,30);
+
+        context.fillRect(x,60,90,10);
+
+        context.fillRect(x+10,70,70,10);
+
+        context.fillRect(x+20,80,50,10);
+
+        context.fillRect(x+30,90,30,10);
+
+        context.fillRect(x+40,100,10,10);
+
+        context.fillStyle="pink";
+        context.fillRect(x2,120,30,10);
+        context.fillRect(x2+60,120,30,10);
+
+        context.fillRect(x2-10,130,50,10);
+        context.fillRect(x2+50,130,50,10);
+
+        context.fillRect(x2-10,140,110,30);
+
+        context.fillRect(x2,170,90,10);
+
+        context.fillRect(x2+10,180,70,10);
+
+        context.fillRect(x2+20,190,50,10);
+
+        context.fillRect(x2+30,200,30,10);
+
+        context.fillRect(x2+40,210,10,10);
+
+        context.fillStyle="black";
+        context.fillRect(x3,230,30,10);
+        context.fillRect(x3+60,230,30,10);
+
+        context.fillRect(x3-10,240,50,10);
+        context.fillRect(x3+50,240,50,10);
+
+        context.fillRect(x3-10,250,110,30);
+
+        context.fillRect(x3,280,90,10);
+
+        context.fillRect(x3+10,290,70,10);
+
+        context.fillRect(x3+20,300,50,10);
+
+        context.fillRect(x3+30,310,30,10);
+
+        context.fillRect(x3+40,320,10,10);
+
+        context.fillStyle="red";
+        context.fillRect(x4,340,30,10);
+        context.fillRect(x4+60,340,30,10);
+
+        context.fillRect(x4-10,350,50,10);
+        context.fillRect(x4+50,350,50,10);
+
+        context.fillRect(x4-10,360,110,30);
+
+        context.fillRect(x4,390,90,10);
+
+        context.fillRect(x4+10,400,70,10);
+
+        context.fillRect(x4+20,410,50,10);
+
+        context.fillRect(x4+30,420,30,10);
+
+        context.fillRect(x4+40,430,10,10);
+
+        context.fillStyle="yellow";
+        context.fillRect(x5,450,30,10);
+        context.fillRect(x5+60,450,30,10);
+
+        context.fillRect(x5-10,460,50,10);
+        context.fillRect(x5+50,460,50,10);
+
+        context.fillRect(x5-10,470,110,30);
+
+        context.fillRect(x5,500,90,10);
+
+        context.fillRect(x5+10,510,70,10);
+
+        context.fillRect(x5+20,520,50,10);
+
+        context.fillRect(x5+30,530,30,10);
+
+        context.fillRect(x5+40,540,10,10);
+
+        context.fillStyle="green";
+        context.fillRect(x6,560,30,10);
+        context.fillRect(x6+60,560,30,10);
+
+        context.fillRect(x6-10,570,50,10);
+        context.fillRect(x6+50,570,50,10);
+
+        context.fillRect(x6-10,580,110,30);
+
+        context.fillRect(x6,610,90,10);
+
+        context.fillRect(x6+10,620,70,10);
+
+        context.fillRect(x6+20,630,50,10);
+
+        context.fillRect(x6+30,640,30,10);
+
+        context.fillRect(x6+40,650,10,10);
+
+        context.fillStyle="purple";
+        context.fillRect(x7,670,30,10);
+        context.fillRect(x7+60,670,30,10);
+
+        context.fillRect(x7-10,680,50,10);
+        context.fillRect(x7+50,680,50,10);
+
+        context.fillRect(x7-10,690,110,30);
+
+        context.fillRect(x7,720,90,10);
+
+        context.fillRect(x7+10,730,70,10);
+
+        context.fillRect(x7+20,740,50,10);
+
+        context.fillRect(x7+30,750,30,10);
+
+        context.fillRect(x7+40,760,10,10);
+
+        if(x>900 || x<10 )
+        {
+            dx=-dx;
+
+        }else if (x2>900 || x2<10)
+        {
+            dx2=-dx2;
+        }else if (x3>900 || x3<10)
+        {
+            dx3=-dx3;
+        }else if (x4>900 || x4<10)
+        {
+            dx4=-dx4;
+        }else if (x5>900 || x5<10)
+        {
+            dx5=-dx5;
+        }else if (x6>900 || x6<10)
+        {
+            dx6=-dx6;
+        }
+        if (x7>900 || x7<10)
+        {
+            dx7=-dx7;
+        }
+
+        x += dx;
+        x2 += dx2;
+        x3 += dx3;
+        x4 += dx4;
+        x5 += dx5;
+        x6 += dx6;
+        x7 += dx7;
+    }
+    animate();
+</script>
+
+</script>
+
+</head>
+<body>
+ <canvas id="micanvas" width="1000" height="780"></canvas>
+</body>
+</html>
