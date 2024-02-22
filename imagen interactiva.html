@@ -1,0 +1,285 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Imagen interactiva</title>
+
+    <style>
+      body{
+          text-align: center;
+      }
+
+      h1{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            color: rgb(51, 6, 56);
+        }
+  
+    </style>
+
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1> Pulsa una tecla de la A a la Z y obten un Album musical</h1>
+    <canvas id="canvas" width="850" height="500"></canvas>
+    <script src = "keycode.js"></script>
+    <script>
+    window.onload = function () {
+      //Our code here...
+      var canvas = document.getElementById("canvas");
+      var context = canvas.getContext("2d");
+
+      context.font='100pt Arial';
+      context.fillStyle='black';
+      
+
+      var imagen = new Image();
+      imagen.src="imgs/Agust D album.jpg";
+
+      var imagenB = new Image();
+      imagenB.src="imgs/Blurryface.jpg";
+
+      var imagenC = new Image();
+      imagenC.src="imgs/crybaby.jpg";
+
+      var imagenD = new Image();
+      imagenD.src="imgs/dark&wild.jpg";
+
+      var imagenE = new Image();
+      imagenE.src="imgs/episode1 love.jpg";
+
+      var imagenF = new Image();
+      imagenF.src="imgs/formula of love.jpg";
+
+      var imagenG = new Image();
+      imagenG.src="imgs/golden.jpg";
+
+      var imagenH = new Image();
+      imagenH.src="imgs/hope world.jpg";
+
+      var imagenI = new Image();
+      imagenI.src="imgs/indigo.jpg";
+
+      var imagenJ = new Image();
+      imagenJ.src="imgs/jack in the box.jpg";
+
+      var imagenK = new Image();
+      imagenK.src="imgs/k12.jpg";
+
+      var imagenL = new Image();
+      imagenL.src="imgs/ly tear.jpg";
+
+      var imagenM = new Image();
+      imagenM.src="imgs/mots 7.jpg";
+
+      var imagenN = new Image();
+      imagenN.src="imgs/new jeans.jpg";
+
+      var imagenO = new Image();
+      imagenO.src="imgs/orul82.jpg";
+
+      var imagenP = new Image();
+      imagenP.src="imgs/proof.jpg";
+
+      var imagenQ = new Image();
+      imagenQ.src="imgs/querencia.jpg";
+
+      var imagenR = new Image();
+      imagenR.src="imgs/ready to be.jpg";
+
+      var imagenS = new Image();
+      imagenS.src="imgs/skool luv affair.jpg";
+
+      var imagenT = new Image();
+      imagenT.src="imgs/trench.jpg";
+
+      var imagenU = new Image();
+      imagenU.src="imgs/unforgiven.jpg";
+
+      var imagenV = new Image();
+      imagenV.src="imgs/vessel.jpg";
+
+      var imagenW = new Image();
+      imagenW.src="imgs/wings.jpg";
+
+      var imagenX = new Image();
+      imagenX.src="imgs/x.jpg";
+
+      var imagenY = new Image();
+      imagenY.src="imgs/you never walk alone.jpg";
+
+      var imagenZ = new Image();
+      imagenZ.src="imgs/zone.jpg";
+
+
+      imagen.onload=function(){
+        
+      }
+
+      function onKeyboardEvent(event){
+        switch (event.keyCode){
+
+            case keycode.A:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagen, 450, 100, 300, 300);
+                context.fillText('A', 200,300);
+            break;
+
+            case keycode.B:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenB, 450, 100, 300, 300);
+                context.fillText('B', 200,300);
+            break;
+
+            case keycode.C:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenC, 450, 100, 300, 300);
+                context.fillText('C', 200,300);
+            break;
+
+            case keycode.D:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenD, 450, 100, 300, 300);
+                context.fillText('D', 200,300);
+            break;
+
+            case keycode.E:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenE, 450, 100, 300, 300);
+                context.fillText('E', 200,300);
+            break;
+
+            case keycode.F:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenF, 450, 100, 300, 300);
+                context.fillText('F', 200,300);
+            break;
+
+            case keycode.G:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenG, 450, 100, 300, 300);
+                context.fillText('G', 200,300);
+            break;
+
+            case keycode.H:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenH, 450, 100, 300, 300);
+                context.fillText('H', 200,300);
+            break;
+
+            case keycode.I:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenI, 450, 100, 300, 300);
+                context.fillText('I', 200,300);
+            break;
+
+            case keycode.J:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenJ, 450, 100, 300, 300);
+                context.fillText('J', 200,300);
+            break;
+
+            case keycode.K:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenK, 450, 100, 300, 300);
+                context.fillText('K', 200,300);
+            break;
+
+            case keycode.L:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenL, 450, 100, 300, 300);
+                context.fillText('L', 200,300);
+            break;
+
+            case keycode.M:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenM, 450, 100, 300, 300);
+                context.fillText('M', 200,300);
+            break;
+
+            case keycode.N:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenN, 450, 100, 300, 300);
+                context.fillText('N', 200,300);
+            break;
+
+            case keycode.O:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenO, 450, 100, 300, 300);
+                context.fillText('O', 200,300);
+            break;
+
+            case keycode.P:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenP, 450, 100, 300, 300);
+                context.fillText('P', 200,300);
+            break;
+
+            case keycode.Q:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenQ, 450, 100, 300, 300);
+                context.fillText('Q', 200,300);
+            break;
+
+            case keycode.R:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenR, 450, 100, 300, 300);
+                context.fillText('R', 200,300);
+            break;
+
+            case keycode.S:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenS, 450, 100, 300, 300);
+                context.fillText('S', 200,300);
+            break;
+
+            case keycode.T:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenT, 450, 100, 300, 300);
+                context.fillText('T', 200,300);
+            break;
+
+            case keycode.U:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenU, 450, 100, 300, 300);
+                context.fillText('U', 200,300);
+            break;
+
+            case keycode.V:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenV, 450, 100, 300, 300);
+                context.fillText('V', 200,300);
+            break;
+
+            case keycode.W:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenW, 450, 100, 300, 300);
+                context.fillText('W', 200,300);
+            break;
+
+            case keycode.X:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenX, 450, 100, 300, 300);
+                context.fillText('X', 200,300);
+            break;
+
+            case keycode.Y:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenY, 450, 100, 300, 300);
+                context.fillText('Y', 200,300);
+            break;
+
+            case keycode.Z:
+                context.clearRect(0,0,innerWidth,innerHeight);
+                context.drawImage(imagenZ, 450, 100, 300, 300);
+                context.fillText('Z', 200,300);
+            break;
+        default:
+            console.log(event.keyCode);
+        }
+      }
+      window.addEventListener('keydown',onKeyboardEvent, false);
+    };
+    </script>
+  </body>
+</html>
