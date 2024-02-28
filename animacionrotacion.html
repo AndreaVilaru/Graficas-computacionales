@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Rotacion animacion</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        h1{
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 20px;
+            margin-bottom: 50px;
+            color: rgb(255, 255, 255);
+        }
+
+      </style>
+    
+  </head>
+  <body>
+    
+    <body style="background-color: black ;"> </body>
+    
+    <canvas id="canvas" width="900" height="600"></canvas>
+    <h1> Mueve el mouse para rotar el vynil</h1>
+    
+    <script src="utils.js"></script>
+    
+    <script>
+    window.onload = function () {
+      var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          mouse = utils.captureMouse(canvas),
+
+          vynil = new Image();
+          vynil.src = "imgs/jitb vynil.png";
+
+          tocadiscos = new Image();
+          tocadiscos.src = "imgs/tocadiscos jitb.png";
+
+          palito = new Image();
+          palito.src = "imgs/palito tocadiscos.png";
+        
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.save();
+
+        context.drawImage(tocadiscos, 83, 83, 745, 462);
+        
+        var x = 572; //donde quieres que este posicionada la imagen en x, puedes poner un número
+        var y = 298;//donde quieres que este posicionada la imagen en y, puedes poner un número
+
+        context.translate(x, y); //coordenadas donde quieres que aparezca tu imagen
+        var dx = mouse.x - x, 
+            dy = mouse.y - y;
+        var radianes = Math.atan2(dy, dx); //radians
+        console.log(radianes);
+        context.rotate(radianes); //radians
+        context.drawImage(vynil, -527/2, -527/2, 527, 527);
+        context.restore();
+
+        context.drawImage(palito, 183, 188, 381, 256); 
+
+      }());
+    };
+    </script>
+  </body>
+</html>
+
+<audio controls loop autoplay>
+  <source src="audios/full jack in the box.mp3"
+  type="audio/mpeg">;
+</audio>
