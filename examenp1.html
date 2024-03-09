@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Examen Práctico</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+         body{
+          text-align: center;
+          background-color: rgb(255, 0, 153);
+        }
+
+      
+      canvas {
+        border: 10px solid #5d5bff;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="517"></canvas>
+    <aside></aside>
+    
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d'),
+            kirby = new Image(),
+            sunset = new Image();
+            sunset.src = "imgs/sunset.jpg"; 
+            angle = 0,
+            range = 80,
+            centerY = canvas.height / 2,
+            xspeed = 1.5,
+            yspeed = 0.07,
+            xpos = 0,
+            ypos = centerY;
+
+        kirby.src = 'imgs/kirbyfly.png'; 
+
+        (function drawFrame () {
+          window.requestAnimationFrame(drawFrame, canvas);
+          
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          context.drawImage(sunset, 0, 0, 800, 517);
+
+          // Drawing image
+          context.drawImage(kirby, xpos, ypos,);
+
+          // Calculate the new position
+          xpos += xspeed;
+          angle += yspeed;
+          ypos = centerY + Math.sin(angle) * range;
+
+          // Check for canvas boundaries and change direction
+          if (xpos + kirby.width >= canvas.width || xpos <= 0) {
+            xspeed *= -1;
+          }
+
+          if (ypos + kirby.height >= canvas.height || ypos <= 0) {
+            yspeed *= -1;
+          }
+        }());
+      };
+    </script>
+  </body>
+</html>
+
+<audio controls loop autoplay>
+  <source src="audios/Every Summertime.mp3" type="audio/mpeg">; 
+  </audio>

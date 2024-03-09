@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Onda sinoidal/coseno</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+          text-align: center;
+          background-color: rgb(212, 0, 255);
+        }
+      
+        canvas {
+        border: 10px solid rgb(0, 255, 234);
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <aside></aside>
+    
+    <script>
+      window.onload = function () {
+        var canvas = document.getElementById('canvas'),
+            context = canvas.getContext('2d'),
+            centerX = canvas.width / 2,
+            centerY = canvas.height / 2,
+
+            space = new Image();
+            space.src = "imgs/space.png"; 
+
+            ball = {
+              x: 0,
+              y: centerY,
+              scale: 0.25,
+
+              image: new Image(),
+              draw: function() {
+                context.drawImage(this.image, this.x - (this.image.width / 2), this.y - (this.image.height / 2),
+                 this.image.width * this.scale, this.image.height * this.scale);
+              }
+            },
+            angle = 0,
+            centerX = 860,
+            centerY = 820,
+            radius = 250,
+            speed = 0.06;
+        
+        ball.image.src = 'imgs/wootteo nave.png'; 
+        
+        (function drawFrame () {
+          window.requestAnimationFrame(drawFrame, canvas);
+          context.clearRect(0, 0, canvas.width, canvas.height);
+
+          context.drawImage(space, 0, 0, 1000, 1000);
+
+          
+          ball.x = centerX + Math.sin(angle) * radius;
+          ball.y = centerY + Math.cos(angle) * radius;
+          angle += speed;
+
+          ball.draw();
+        }());
+      };
+    </script>
+  </body>
+</html>
+
+<audio controls loop autoplay>
+  <source src="audios/The Astronaut.mp3" type="audio/mpeg">;
+</audio>
