@@ -1,0 +1,152 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tangram Corazon</title>
+
+    <h1>Tangram</h1>
+
+
+    <style>
+        body {
+            background-color: rgb(189, 5, 206);
+            text-align: center;
+        }
+
+        h1 {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            color: rgb(255, 255, 255);
+        }
+
+        canvas {
+            background-color: whitesmoke;
+        }
+    </style>
+
+</head>
+
+<body>
+    <canvas id="canvas" width="1000" height="1000"></canvas>
+    <script>
+        window.onload = function () {
+            //Our code here...
+            var canvas = document.getElementById('canvas'),
+                context = canvas.getContext('2d');
+
+            //Gradiante-cielo
+            pt1 = {x: 100, y: 100},               //gradient start point
+            pt2 = {x: 600, y: 700},           //gradient end point
+            gradient = context.createLinearGradient(pt1.x, pt1.y, pt2.x, pt2.y);
+
+            //purple to blue
+            gradient.addColorStop(0.3, "#723aec");
+            
+            gradient.addColorStop(1, "#6b9ef3");
+
+            context.fillStyle = gradient;
+            context.fillRect(0, 0, 1000, 1000);
+    
+                        //triangulo grande rosa
+                        context.save();
+                        context.fillStyle = "#eb4285";
+                        context.beginPath();
+
+                        context.lineTo(100, 420);
+                        context.lineTo(615, 420);
+                        context.lineTo(357, 170);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //triangulo mediano amarillo
+                        context.save();
+                        context.fillStyle = "#f6e782";
+                        context.beginPath();
+
+                        context.lineTo(100, 420);
+                        context.lineTo(357, 420);
+                        context.lineTo(357, 680);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //triangulo grande turquesa
+                        context.save();
+                        context.fillStyle = "#60d6db";
+                        context.beginPath();
+
+                        context.lineTo(357, 420);
+                        context.lineTo(900, 420);
+                        context.lineTo(628, 680);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //triangulo pequeno rosa
+                        context.save();
+                        context.fillStyle = "#e674b4";
+                        context.beginPath();
+
+                        context.lineTo(357, 420);
+                        context.lineTo(493, 550);
+                        context.lineTo(357, 680);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //trapezoide azul
+                        context.save();
+                        context.fillStyle = "#32c0f3";
+                        context.beginPath();
+
+                        context.lineTo(615, 420);
+                        context.lineTo(900, 420);
+                        context.lineTo(760, 290);
+                        context.lineTo(480, 290);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //triangulo pequeno lila
+                        context.save();
+                        context.fillStyle = "#daafda";
+                        context.beginPath();
+
+                        context.lineTo(480, 290);
+                        context.lineTo(760, 290);
+                        context.lineTo(625, 170);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+                        //cuadrado verde
+                        context.save();
+                        context.fillStyle = "#8edb91";
+                        context.beginPath();
+
+                        context.lineTo(357, 680);
+                        context.lineTo(493, 550);
+                        context.lineTo(628, 680);
+                        context.lineTo(485, 810);
+                        
+                        context.closePath();
+                        context.fill();
+                        context.restore(); 
+
+
+
+        };
+    </script>
+</body>
+
+</html>
+
+
