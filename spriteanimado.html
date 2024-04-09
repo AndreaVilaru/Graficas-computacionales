@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Sprite Animado</title>
+
+    <h1>Elsa "Show Yourself"</h1>
+
+    <style>
+      body { 
+        text-align: center;
+        background-image: url('imgs/floating\ diamons.jpg'); 
+        background-color: rgb(15, 0, 61);
+      }
+
+      h1{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            font-size: 20px;
+            color: rgb(238, 245, 255);
+      }
+      #container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+      canvas{
+        background-color: white;
+        border: 20px solid rgb(82, 47, 219);
+      }
+      audio{
+        display: block; /* Para que el elemento audio esté debajo del canvas */
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="540" height="284"></canvas>
+    <script src="spriteRC.js"></script> 
+    <script>
+    window.onload = function () {
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        var  elsa = new sprite(); //*** Puedes cambiar el nombre de la variable
+    
+        elsa.x = 0;
+        elsa.y = 0;
+
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        elsa.draw(context); 
+      }());
+      
+
+    };
+    </script>
+  </body>
+</html>
+
+<div id = "container">
+<audio controls loop autoplay>
+  <source src="audios/Show Yourself.mp3" tyope="audio/mpeg">;
+</audio>
+</div>
