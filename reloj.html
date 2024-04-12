@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Reloj</title>
+    
+    <style>
+
+        body{
+          text-align: center;
+          background-image: url('imgs/lluvia estrellas.gif');
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-color: rgb(208, 0, 255);
+        }
+
+        #container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        
+        canvas { 
+          background-color: #ffffff00;
+            background-image: url("imgs/reloj van.png");
+            background-repeat: no-repeat;
+        }
+    </style>
+  </head>
+  <body>
+    <canvas id="canvas" width="800" height="800"></canvas>
+
+    <script src="utils.js"></script>
+    
+    <script>
+    window.onload = function () {
+    var canvas = document.getElementById('canvas'),
+          context = canvas.getContext('2d'),
+          horario = .008, //degrees
+          minutero = .104,
+          segundero = 6.2;
+
+    var hora = new Image();
+    hora.src = "imgs/horario.png";
+    var radianes1 = 0;
+
+    var minuto = new Image();
+    minuto.src = "imgs/minutero.png";
+    var radianes2 = 0;
+
+    var segundo = new Image();
+    segundo.src = "imgs/segundero.png";
+    var radianes3 = 0;
+
+      (function drawFrame () {
+        window.requestAnimationFrame(drawFrame, canvas);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+
+        //Horario
+        context.save();
+        context.translate(400, 460);
+        radianes1 += horario * Math.PI / 180; //to radians
+        context.rotate(radianes1); //radians
+        context.drawImage(hora, -hora.width/2,-hora.height/2);
+        context.restore();
+
+        //Minutero
+        context.save();
+        context.translate(400, 460);
+        radianes2 += minutero * Math.PI / 180; //to radians
+        context.rotate(radianes2); //radians
+        context.drawImage(minuto, -minuto.width/2,-minuto.height/2);
+        context.restore();
+
+        //Segundero
+        context.save();
+        context.translate(400, 460);
+        radianes3 += segundero * Math.PI / 180; //to radians
+        context.rotate(radianes3); //radians
+        context.drawImage(segundo, -segundo.width/2,-segundo.height/2);
+        context.restore();
+      
+      }());
+    };
+    </script>
+  </body>
+</html>
+
+<div id = "container">
+  <audio controls loop autoplay>
+    <source src="audios/ASAP.mp3" tyope="audio/mpeg">;
+  </audio>
+  </div>
